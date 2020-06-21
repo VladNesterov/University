@@ -1,4 +1,5 @@
 ### Action with question
+Sends
 ```
 POST /question/create
 POST /question/update
@@ -32,6 +33,7 @@ POST /question/read
 ```
 
 ### Action with quiz
+Sends
 ```
 POST   /quiz/create
 POST   /quiz/update
