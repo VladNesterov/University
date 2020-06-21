@@ -19,13 +19,13 @@ public class QuestionEntity {
     @Nullable
     private long id;
 
-    @Column(name = "link_quiz", columnDefinition = "INT DEFAULT 0")
+    @Column(name = "link_quiz")
     private long link;
 
     @Column(name = "text_question")
     private String text;
 
-    @Column(name = "order_question", columnDefinition = "INT DEFAULT 0", unique = true)
+    @Column(name = "order_question")
     private long order;
 
 }
