@@ -51,9 +51,9 @@ POST   /quiz/create
 {
     "name": "MembersWish", // [required] string 
     "status": "Active", // [required] string 
-    "startDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HHmm
-    "finishDate": "2012-04-22T20:00:00.000+00:00" // [required] date in format YYYYMMDD'T'HHmm
-
+    "startDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HH:MM:ss[.ммм]
+    "finishDate": "2012-04-22T20:00:00.000+00:00" // [required] date in format YYYYMMDD'T'HH:MM:ss[.ммм]
+YYYYMMDD'T'HHmm
 }
 ```
 ```
@@ -61,8 +61,8 @@ POST   /quiz/update
 {
     "name": "MembersWish", // [required] string 
     "status": "Active", // [required] string 
-    "startDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HHmm
-    "finishDate": "2012-04-22T20:00:00.000+00:00" // [required] date in format YYYYMMDD'T'HHmm
+    "startDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HH:MM:ss[.ммм]
+    "finishDate": "2012-04-22T20:00:00.000+00:00" // [required] date in format YYYYMMDD'T'HH:MM:ss[.ммм]
 
 }
 ```
@@ -86,8 +86,8 @@ POST  /quiz/read
     {
         "id": 69, // [required] int 
         "name": "MembersWish02", // [required] string
-        "startDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HHmm
-        "finishDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HHmm
+        "startDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HH:MM:ss[.ммм]
+        "finishDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HH:MM:ss[.ммм]
         "status": "Active", // [required] string
         "questionEntities": [
             {
