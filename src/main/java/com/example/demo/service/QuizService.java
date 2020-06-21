@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.customExeptions.QuizNotFoundForChange;
 import com.example.demo.customExeptions.QuizWasExist;
+import com.example.demo.customExeptions.WrongOrderDayException;
 import com.example.demo.dto.QuizDto;
 import com.example.demo.entity.QuizEntity;
 import com.example.demo.repository.DefaultActionQuiz;
@@ -26,6 +27,9 @@ public class QuizService implements DefaultActionQuiz {
 
     @Override
     public void create(QuizDto quizDto) {
+        if (quizDto.getStartDate().after(quizDto.getFinishDate())){
+            throw new WrongOrderDayException("Error in date order");
+        }
         QuizEntity quizEntityAlreadyExists = quizRepository.findByName(quizDto.getName());
         if (quizEntityAlreadyExists == null) {
             QuizEntity quizEntity = new QuizEntity();

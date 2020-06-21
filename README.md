@@ -101,3 +101,6 @@ POST  /quiz/read
 ]
 ```
 
+All questionnaires are unique. 
+All questions in questionnaires are unique.
+You can add date in order.
