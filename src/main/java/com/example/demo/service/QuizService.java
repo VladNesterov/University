@@ -36,7 +36,7 @@ public class QuizService implements DefaultActionQuiz {
             quizEntity.setStatus("Active");
             quizRepository.save(quizEntity);
         } else {
-            throw new QuizWasExist("This quiz was create");
+            throw new QuizWasExist("This quiz: " + quizDto.getName() + " was create");
         }
     }
 
@@ -45,7 +45,7 @@ public class QuizService implements DefaultActionQuiz {
     public void delete(String name) {
         QuizEntity quizEntity = quizRepository.findByName(name);
         if (quizEntity == null) {
-            throw new QuizNotFoundForChange("This quiz not found for change");
+            throw new QuizNotFoundForChange("This quiz: " + name + " not found");
         }
         questionRepository.deleteAll(quizEntity.getQuestionEntities());
         quizRepository.delete(quizEntity);
@@ -60,7 +60,7 @@ public class QuizService implements DefaultActionQuiz {
             if (quizDto.getFinishDate() != null) quizEntity.setFinishDate(quizDto.getFinishDate());
 
         } else {
-            throw new QuizNotFoundForChange("This quiz not found to update");
+            throw new QuizNotFoundForChange("This quiz: " + quizDto.getName() + " not found to update");
         }
         quizRepository.save(quizEntity);
     }
@@ -74,7 +74,7 @@ public class QuizService implements DefaultActionQuiz {
     public void cancelQuiz(String name) {
         QuizEntity quizEntity = quizRepository.findByName(name);
         if (quizEntity == null) {
-            throw new QuizNotFoundForChange("This quiz not found to cancel");
+            throw new QuizNotFoundForChange("This quiz: " + name + " not found");
         }
         quizRepository.setInactive(name);
     }

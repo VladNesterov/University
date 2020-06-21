@@ -35,6 +35,13 @@ public class QuestionService implements DefaultActionQuestion {
             questionEntity.setText(questionDto.getText());
 
             List<QuestionEntity> quizEntityList = quizEntity.getQuestionEntities();
+
+            for (QuestionEntity entity : quizEntityList) {
+                if (entity.getOrder() == questionDto.getOrder()) {
+                    throw new QuizNotFoundForChange("This question was exist for this quiz: " + questionDto.getNameQuiz());
+                }
+            }
+
             quizEntityList.add(questionEntity);
             quizEntity.setQuestionEntities(quizEntityList);
 
@@ -48,7 +55,6 @@ public class QuestionService implements DefaultActionQuestion {
     @Override
     public void delete(String nameQuiz, long position) {
         QuizEntity quizEntity = quizRepository.findByName(nameQuiz);
-        QuestionEntity questionEntity = new QuestionEntity();
         if (quizEntity != null && quizEntity.getQuestionEntities() != null) {
             for (int i = 0; i < quizEntity.getQuestionEntities().size(); i++) {
                 if (quizEntity.getQuestionEntities().get(i).getOrder() == position) {
@@ -58,7 +64,7 @@ public class QuestionService implements DefaultActionQuestion {
             }
 
         } else {
-            throw new QuizNotFoundForChange("This quiz not found for change");
+            throw new QuizNotFoundForChange("This quiz: " + nameQuiz + " not found");
         }
 
         quizRepository.save(quizEntity);
@@ -79,12 +85,12 @@ public class QuestionService implements DefaultActionQuestion {
                     break;
                 }
                 if (i == quizEntityList.size() - 1) {
-                    throw new QuizNotFoundForChange("This quiz don't contain this question");
+                    throw new QuizNotFoundForChange("This quiz: " + questionDto.getNameQuiz() + " don't contain this question");
                 }
             }
             questionRepository.save(questionEntity);
         } else {
-            throw new QuizNotFoundForChange("This quiz not found for change");
+            throw new QuizNotFoundForChange("You cant add this quiz: " + questionDto.getNameQuiz() + ", because he don't found");
         }
     }
 
