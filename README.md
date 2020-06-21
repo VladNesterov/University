@@ -38,7 +38,7 @@ POST /question/read
          "id": "1", // [required] int 
          "link": "1", // [required] int
          "text": "Question", // [required] string 
-         "order": // [required] int
+         "order": "1" // [required] int
     }
 ]
 

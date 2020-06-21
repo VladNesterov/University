@@ -53,7 +53,6 @@ public class QuestionService implements DefaultActionQuestion {
             for (int i = 0; i < quizEntity.getQuestionEntities().size(); i++) {
                 if (quizEntity.getQuestionEntities().get(i).getOrder() == position) {
                     quizEntity.getQuestionEntities().remove(i);
-//                    questionEntity = quizEntity.getQuestionEntities().get(i);
                     break;
                 }
             }
@@ -78,6 +77,9 @@ public class QuestionService implements DefaultActionQuestion {
                     questionEntity.setOrder(questionDto.getOrder());
                     questionEntity.setText(questionDto.getText());
                     break;
+                }
+                if (i == quizEntityList.size() - 1) {
+                    throw new QuizNotFoundForChange("This quiz don't contain this question");
                 }
             }
             questionRepository.save(questionEntity);

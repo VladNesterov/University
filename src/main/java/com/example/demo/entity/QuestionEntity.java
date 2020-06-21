@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 
-import com.example.demo.dto.QuestionDto;
 import jdk.internal.jline.internal.Nullable;
 import lombok.Data;
 

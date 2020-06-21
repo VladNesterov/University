@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 import com.example.demo.dto.QuestionDto;
-import com.example.demo.dto.QuestionResponseDto;
 import com.example.demo.entity.QuestionEntity;
 
 import java.util.List;
