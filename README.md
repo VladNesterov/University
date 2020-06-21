@@ -2,6 +2,15 @@
 Sends
 ```
 POST /question/create
+{
+    "nameQuiz": "MembersWish", // [required] string 
+    "text": "Text", // [required] string 
+    "order": "12" // [required] int 
+
+}
+```
+
+```
 POST /question/update
 {
     "nameQuiz": "MembersWish", // [required] string 
@@ -10,6 +19,7 @@ POST /question/update
 
 }
 ```
+
 ```
 DELETE /question/delete
 {
@@ -19,6 +29,7 @@ DELETE /question/delete
 }
 ```
 Returns 
+
 ```
 POST /question/read
 [
@@ -36,6 +47,15 @@ POST /question/read
 Sends
 ```
 POST   /quiz/create
+{
+    "name": "MembersWish", // [required] string 
+    "status": "Active", // [required] string 
+    "startDate": "2012-04-22T20:00:00.000+00:00", // [required] date in format YYYYMMDD'T'HHmm
+    "finishDate": "2012-04-22T20:00:00.000+00:00" // [required] date in format YYYYMMDD'T'HHmm
+
+}
+```
+```
 POST   /quiz/update
 {
     "name": "MembersWish", // [required] string 
@@ -58,6 +78,7 @@ POST  /quiz/cancel
 }
 ```
 Returns 
+
 ```
 POST  /quiz/read
 [
