@@ -30,12 +30,12 @@ public class QuizController {
     }
 
     @RequestMapping(value = "/quiz/Update", method = RequestMethod.POST)
-    public void Update(@RequestBody QuizDto quizDto) {
+    public void update(@RequestBody QuizDto quizDto) {
         quizService.update(quizDto);
     }
 
     @RequestMapping(value = "/quiz/read", method = RequestMethod.POST)
-    public List<QuizEntity> Delete() {
+    public List<QuizEntity> delete() {
         return quizService.readAll();
     }
 
