@@ -1,4 +1,4 @@
-CREATE TABLE quiz_entity
+CREATE TABLE IF NOT EXISTS  quiz_entity
 (
     ID          INT     NOT NULL,
     name        varchar NOT NULL,

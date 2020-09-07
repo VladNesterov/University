@@ -1,4 +1,4 @@
-CREATE TABLE question_entity
+CREATE TABLE IF NOT EXISTS question_entity
 (
     ID             INT NOT NULL,
     link_quiz      Int,
